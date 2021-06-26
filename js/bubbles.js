@@ -1,6 +1,7 @@
-const TEMPO_MINIMO = 1000;    // 1s em milissegundos
-const TEMPO_VARIAVEL = 3000;  // 3s
-const DURACAO = 5000;         // 5s
+const TEMPO_MINIMO = 100;
+const TEMPO_VARIAVEL = 300;
+const DURACAO_MINIMO = 3000;
+const DURACAO_VARIAVEL = 5000;
 const bolhaEl = carregaUmaImagem('images/bolha.png');
 
 function carregaUmaImagem(path) {
@@ -25,9 +26,9 @@ function criaUmaBolha() {
   const posicaoX = Math.random() * getLarguraJanela() + 'px';
   // Math.random() retorna um número aleatório de 0 até 1
   // ... daí multiplicamos esse número pela largura da janela
-
+  let duracao = DURACAO_MINIMO + Math.random() * DURACAO_VARIAVEL; // Bolhas com diferentes velocidades ficam mais bonitinhas heheh
   novaBolhaEl.style.position = 'fixed';
-  novaBolhaEl.style.transition = `all ${DURACAO}ms linear`;
+  novaBolhaEl.style.transition = `all ${duracao}ms linear`;
   novaBolhaEl.style.bottom = '-50px';
   novaBolhaEl.style.left = posicaoX;
   novaBolhaEl.style.opacity = 1;
@@ -42,7 +43,7 @@ function criaUmaBolha() {
 
   setTimeout(function () {
     novaBolhaEl.remove();
-  }, DURACAO);
+  }, duracao);
 
 
   // pelo menos, vai esperar por TEMPO_MINIMO. Mas pode, adicionalmente,

@@ -1,7 +1,10 @@
 /* EXERCÍCIO 1: fontes */
 @import "./fonts/ravie.css";
 @import "./fonts/verdana.css";
-/* importá-las aqui... e definir as `font-family` da turminha... */
+
+:root {
+  --altura_ticket: 84px;
+}
 
 html {
   min-height: 100vh;
@@ -70,6 +73,7 @@ strong {
 #cardapio {
   grid-column: 2;
   grid-row: 2;
+  padding: 20px;
 }
 
 #rodape-pagina {
@@ -80,51 +84,68 @@ strong {
 
 
 /* EXERCÍCIO 3: cabeçalho da página */
-#cabecalho-pagina {
-
-}
 
 #cabecalho-pagina h1 {
-  margin: 0;
+  margin: 10px 0 0;
   font-size: 36px;
   color: #e90c0c;
   font-weight: normal;
+  text-align: center;
 }
 
 #cabecalho-pagina h2 {
-  margin: 0;
+  margin: 0 10px 10px 0;
   font-size: 24px;
   color: #333;
   font-weight: normal;
+  text-align: right;
 }
 
 /* EXERCÍCIO 4: cada item do menu */
 article {
+  display: flex;
+  justify-content: space-between;
 }
 
 
 /* EXERCÍCIO 5: o rodapé */
 #rodape-pagina {
+  padding-right: 15px;
+  padding-top: 46px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: start;
 }
 
 /* EXERCÍCIO 6: lateral */
 #lateral {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
-
 
 /* EXERCÍCIO 7: o ticket */
 #ticket {
+  position: fixed;
+  top: calc(50% - var(--altura_ticket) / 2);
+  left: -89px;
 }
 
 #ticket:hover {
+  left: 0;
 }
-
 
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
 #siri {
+  position: relative;
+  top: 17px;
+  left: -10px;
 }
 
 #peixe {
+  position: relative;
+  left: -44px;
 }
 
 /* EXERCÍCIO 9: bolhas - no HTML e no JS */
