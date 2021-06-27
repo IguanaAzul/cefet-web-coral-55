@@ -126,6 +126,7 @@ strong {
 article {
   display: flex;
   justify-content: space-between;
+  padding: 0.5em;
 }
 
 
@@ -155,6 +156,7 @@ article {
 
 #ticket:hover {
   left: 0;
+  transition: left 100ms ease-out;
 }
 
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
